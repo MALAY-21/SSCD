@@ -1,3 +1,4 @@
+//MACRO pass-1 assignment
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,29 +20,25 @@ public class Assign3 {
             System.out.println("No macro definition found.");
             return;
         }
-
-        // Check if the macro starts with "MACRO" and ends with "MEND"
         if (!macroDefinition.get(0).trim().equals("MACRO") || !macroDefinition.get(macroDefinition.size() - 1).trim().equals("MEND")) {
             System.out.println("Invalid macro format. Macro should start with 'MACRO' and end with 'MEND'.");
             return;
         }
-
-        // The second line contains the macro name and arguments
         String[] macroLine = macroDefinition.get(1).trim().split("\\s+");
-        String macroName = macroLine[0]; // Macro name
+        String macroName = macroLine[0]; 
 
         // Add macro name to MNT
         MNT.add(macroName);
 
-        // Parse arguments (with or without '&')
+        // Parse arguments 
         if (macroLine.length > 1) {
             String[] arguments = macroLine[1].split(",");
             for (int i = 0; i < arguments.length; i++) {
                 String arg = arguments[i].trim();
                 if (!arg.startsWith("&")) {
-                    arg = "&" + arg; // Ensure argument starts with '&'
+                    arg = "&" + arg; 
                 }
-                ALA.put(arg, i + 1); // Store the argument in ALA with a position index
+                ALA.put(arg, i + 1); 
             }
         }
 
@@ -104,11 +101,11 @@ public class Assign3 {
                 }
                 // Non-macro part
                 else {
-                    nonMacroCode.add(line); // Add non-macro lines to be written to output
+                    nonMacroCode.add(line); 
                 }
             }
 
-            // Write the non-macro part to output.txt
+            //output.txt
             for (String codeLine : nonMacroCode) {
                 bw.write(codeLine);
                 bw.newLine();
@@ -121,8 +118,8 @@ public class Assign3 {
 
     // Main method
     public static void main(String[] args) {
-        String inputFileName = "E:\\vscode\\Assignments\\SSCD\\assign_3\\input.txt";  // Input file
-        String outputFileName = "E:\\vscode\\Assignments\\SSCD\\assign_3\\output.txt"; // Output file for non-macro code
+        String inputFileName = "E:\\vscode\\Assignments\\SSCD\\assign_3\\input.txt";  
+        String outputFileName = "E:\\vscode\\Assignments\\SSCD\\assign_3\\output.txt"; 
 
         // Process file and store non-macro code in output.txt
         readFileAndProcess(inputFileName, outputFileName);
