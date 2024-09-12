@@ -1,9 +1,9 @@
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Assign1 {
     public static void main(String[] args) {
-        String filepath="E://vscode//C++_practice//SSCD//assign_1//input.txt";
+        String filepath="E://vscode//Assignments//SSCD//assign_1//input.txt";
         ArrayList<String>opcode=new ArrayList<>();
         ArrayList<String>op1=new ArrayList<>();
         ArrayList<String>op2=new ArrayList<>();

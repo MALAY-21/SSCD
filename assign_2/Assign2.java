@@ -1,11 +1,9 @@
-package C++_practice.SSCD.assign_2;
-
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class Assign2 {
     public static void main(String[] args) {
-        String filepath = "C++_practice\\SSCD\\assign_2\\input.txt";
+        String filepath = "E:\\vscode\\Assignments\\SSCD\\assign_2\\input.txt";
         ArrayList<String> opcode = new ArrayList<>();
         ArrayList<String> op1 = new ArrayList<>();
         ArrayList<String> op2 = new ArrayList<>();
