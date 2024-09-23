@@ -30,7 +30,7 @@ public class MacroProcessorPass1 {
                 } else if (line.equals("MACRO")) {
                     line = reader.readLine();
                     if (line != null) {
-                        String[] splitStr = line.split("\\s+");
+                        String[] splitStr = line.split("\\s+");//splitting the macro name and arguments
                         mdt.put(mdtIndex, line);
                         mnt.add(splitStr[0], mdtIndex);
                         mdtIndex++;
@@ -80,7 +80,7 @@ public class MacroProcessorPass1 {
             writer.newLine();
             for (Map.Entry<String, String> entry : ala.entrySet()) {
                 writer.write(entry.getKey() + "\t" + entry.getValue());
-                writer.newLine();
+                writer.newLine(); 
             }
 
             writer.write("Macro Name Table:");
@@ -104,6 +104,7 @@ public class MacroProcessorPass1 {
 
     // Macro Name Table class
     public static class MacroNameTable {
+        //defining MNT
         private List<Integer> mntIndexList = new ArrayList<>();
         private List<String> mntNameList = new ArrayList<>();
         private List<Integer> mdtIndexList = new ArrayList<>();
