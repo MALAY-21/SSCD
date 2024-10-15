@@ -1,0 +1,12 @@
+Command to Run the Files
+lex [LEX_Filename].l
+yacc -d [YACC_Filename].y
+gcc lex.yy.c [Header_FIle].c
+./a.out
+
+
+Example
+lex compsint.l
+yacc -d compsint.y
+gcc lex.yy.c y.tab.c
+./a.out
