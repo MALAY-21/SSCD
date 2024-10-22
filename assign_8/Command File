@@ -1,4 +1,6 @@
-lex cal.l
-yacc -d cal.y
+For Ubuntu
+-----------
+lex calculator.l
+yacc -d calculator.y
 gcc lex.yy.c y.tab.c -lm
 ./a.out
